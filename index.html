@@ -14,6 +14,7 @@
                 <span v-if="product.quantity === 0"> - SEM ESTOQUE</span>
             </li>
         </ul>
+        <h2>Total de produtos: {{ totalProducts }}</h2>
     </div>
 
     <script>
@@ -21,6 +22,11 @@
             el: '#app',
             data: {
                 products: []
+            },
+            computed: {
+                totalProducts() {
+                    return this.products.reduce((sum, product) => sum + product.quantity, 0)
+                }
             },
             created() {
                 fetch('https://api.myjson.com/bins/rp6x7')
