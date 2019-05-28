@@ -17,11 +17,12 @@
         const app = new Vue({
             el: '#app',
             data: {
-                products: [
-                    'Sapato',
-                    'Meia',
-                    'Blusa'
-                ]
+                products: []
+            },
+            created() {
+                fetch('https://api.myjson.com/bins/rp6x7')
+                    .then(response => response.json())
+                    .then(json => this.products = json.products)
             }
         });
     </script>
