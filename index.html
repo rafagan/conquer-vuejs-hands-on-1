@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Conquer VueJS Hands ON 1</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 </head>
 <body>
-    <div>
-        <h2>O produto <span id="product">X</span> está em estoque</h2>
+    <div id="app">
+        <h2>O produto {{ product }} está em estoque</h2>
     </div>
 
     <script>
-        const product = 'Sapato';
-        const productTag = document.getElementById('product');
-        productTag.innerText = product;
+        const app = new Vue({
+            el: '#app',
+            data: {
+                product: 'Sapato'
+            }
+        });
     </script>
 </body>
 </html>
