@@ -8,14 +8,20 @@
 </head>
 <body>
     <div id="app">
-        <h2>O produto {{ product }} está em estoque</h2>
+        <ul>
+            <li v-for="product in products"> {{product}} </li>
+        </ul>
     </div>
 
     <script>
         const app = new Vue({
             el: '#app',
             data: {
-                product: 'Sapato'
+                products: [
+                    'Sapato',
+                    'Meia',
+                    'Blusa'
+                ]
             }
         });
     </script>
